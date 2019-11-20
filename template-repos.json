@@ -1,0 +1,13 @@
+{
+  "repos": [
+    {
+      "gitUrl": "https://gitee.com/freshways/code-gen.git",
+      "branchName": "master",
+      "title": "court模板",
+      "description": "基于Mybatisplus、layui的模板",
+      "author": "freshways",
+      "homePage": "https://gitee.com/freshways/code-gen",
+      "templateRelativePath": "court"
+    }
+  ]
+}

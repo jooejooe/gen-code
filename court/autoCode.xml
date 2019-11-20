@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<autoMake
+        xmlns="https://cn2oo8.github.io/molicode_doc/schema/autoCode"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://cn2oo8.github.io/molicode_doc/schema/autoCode https://cn2oo8.github.io/molicode_doc/schema/autoCode/autoCode-1.0.xsd">
+
+    <moliCodeVersion>1.0.0</moliCodeVersion>
+
+
+    <mavenInfo>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.shareyi.molicode</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <artifactId>molicode-template-mybatisplus</artifactId>
+        <name>mybatisplus代码的模板</name>
+        <description>mybatisplus代码的模板</description>
+
+        <developers>
+            <developer>
+                <name>david</name>
+                <email>zsb1987@foxmail.com</email>
+                <organization>www.shareyi.com</organization>
+                <organizationUrl>www.shareyi.com</organizationUrl>
+            </developer>
+        </developers>
+    </mavenInfo>
+
+    <properties>
+        <!-- 代码片段配置文件，将部分公用的代码抽取出来放置到此处 -->
+        <property key="snippet.template.path">config/molicode/snippetTemplate.xml</property>
+        <!-- 用户自定义的配置文件，配置的值以文本方式直接可以在：extendConf.get("") 到-->
+        <property key="extend.text.config">config/molicode/extendConfig.xml</property>
+        <!-- 页面依赖资源配置文件（可支持requirejs和 普通引入）-->
+        <property key="pagerequire.map.config">config/molicode/requireConfig.xml</property>
+        <!-- 数据库类型到java类型映射-->
+        <property key="dbtype.javatype.map.config">config/molicode/db2javaTypeMap.xml</property>
+        <!-- 数据库类型到页面类型映射-->
+        <property key="dbtype.columntag.map.config">config/molicode/dbType2ColumnTagMap.xml</property>
+
+    </properties>
+
+
+    <templates>
+    	<!-- 实体类 -->
+        <template id="mybatisPlusDomain" name="mybatisPlusDomain类"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/entity/${tableDefine.id}.java"
+                  templateFile="templates/entity.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+        
+        <template id="mapxml" name="mapxml文件"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/mapper/${tableDefine.id}.xml"
+                  templateFile="templates/mapper.xml.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+		<!-- mapper -->
+        <template id="mybatisPlusDao" name="mybatisPlusDao接口"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/mapper/${tableDefine.id}Mapper.java"
+                  templateFile="templates/mapper.java.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+        
+        <!-- service接口 -->
+        <template id="service" name="service接口"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/service/I${tableDefine.id}Service.java"
+                  templateFile="templates/service.java.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+        
+        <template id="serviceImpl" name="serviceImpl接口"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/service/impl/${tableDefine.id}ServiceImpl.java"
+                  templateFile="templates/serviceImpl.java.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+        
+        
+        <template id="controller" name="controller类"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/controller/${tableDefine.id}Controller.java"
+                  templateFile="templates/controller.java.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+
+    </templates>
+
+
+</autoMake>
