@@ -3,16 +3,13 @@
     def columns=tableDefine.columns;
     def pkColumn=tableDefine.getPkColumn();
     def pkJavaType=tableNameUtil.getDataType(pkColumn?.columnType);
-%>package ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category,"." )}.entity;
+%>package ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category,"." )}.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.wuwenze.poi.annotation.Excel;
-import com.wuwenze.poi.annotation.ExcelField;
 
-import cn.com.sinosoft.common.converter.TimeConverter;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;

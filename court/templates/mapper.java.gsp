@@ -2,9 +2,9 @@
     def varDomainName=tableNameUtil.lowerCaseFirst(tableDefine.id);
     def pkColumn=tableDefine.getPkColumn();
     def pkJavaType=tableNameUtil.getDataType(pkColumn?.columnType);
-%>package ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category,"." )}.mapper;
+%>package ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category,"." )}.dao;
 
-import ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category,"." )}.entity.${tableDefine.id};
+import ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category,"." )}.domain.${tableDefine.id};
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -43,27 +43,27 @@
     <templates>
     	<!-- 实体类 -->
         <template id="mybatisPlusDomain" name="mybatisPlusDomain类"
-                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/entity/${tableDefine.id}.java"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/domain/${tableDefine.id}.java"
                   templateFile="templates/entity.gsp" engine="groovy">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
         
         <template id="mapxml" name="mapxml文件"
-                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/mapper/${tableDefine.id}.xml"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/dao/${tableDefine.id}.xml"
                   templateFile="templates/mapper.xml.gsp" engine="groovy">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
 
 		<!-- mapper -->
         <template id="mybatisPlusDao" name="mybatisPlusDao接口"
-                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/mapper/${tableDefine.id}Mapper.java"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/dao/${tableDefine.id}Mapper.java"
                   templateFile="templates/mapper.java.gsp" engine="groovy">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
         
         <!-- service接口 -->
         <template id="service" name="service接口"
-                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/service/I${tableDefine.id}Service.java"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/service/${tableDefine.id}Service.java"
                   templateFile="templates/service.java.gsp" engine="groovy">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
@@ -78,6 +78,11 @@
         <template id="controller" name="controller类"
                   destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/controller/${tableDefine.id}Controller.java"
                   templateFile="templates/controller.java.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+        </template>
+        <template id="vo" name="VO类"
+                  destFile="/${config.artifactId}/src/main/java/${PubUtils.packageToPath(config.basePackage)}/${PubUtils.packageToPath(config.category)}/vo/${tableDefine.id}QueryVO.java"
+                  templateFile="templates/vo.java.gsp" engine="groovy">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
 

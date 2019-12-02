@@ -5,13 +5,15 @@
 	def className = tableDefine.id;
 %>package ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category, ".")}.service;
 
-import ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category, ".")}.entity.${tableDefine.id};
-
-import cn.com.sinosoft.common.entity.QueryRequest;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.IService;
+import ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category, ".")}.domain.${tableDefine.id};
+import ${config.basePackage}.common.domain.QueryRequest;
+import ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category, ".")}.vo.${tableDefine.id}QueryVO;
 
 import java.util.List;
+import java.util.Map;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * ${tableDefine.cnname}Service接口类
@@ -19,15 +21,15 @@ import java.util.List;
  * @author ${config.author}
  * @date ${config.nowDate}
  */
-public interface I${className}Service extends IService<${className}> {
+public interface ${className}Service extends IService<${className}> {
     /**
      * 查询（分页）
      *
      * @param request QueryRequest
-     * @param ${varDomainName} ${varDomainName}
+     * @param ${varDomainName}VO ${tableDefine.id}QueryVO
      * @return IPage<${className}>
      */
-    IPage<${className}> find${className}s(QueryRequest request, ${className} ${varDomainName});
+    IPage<${className}> page(QueryRequest request, ${tableDefine.id}QueryVO ${varDomainName}VO);
 
     /**
      * 查询（所有）
@@ -35,26 +37,26 @@ public interface I${className}Service extends IService<${className}> {
      * @param ${varDomainName} ${varDomainName}
      * @return List<${className}>
      */
-    List<${className}> find${className}s(${className} ${varDomainName});
+    List<${className}> find(${className} ${varDomainName});
 
     /**
      * 新增
      *
      * @param ${varDomainName} ${varDomainName}
      */
-    void create${className}(${className} ${varDomainName});
+    void create(${className} ${varDomainName});
 
     /**
      * 修改
      *
      * @param ${varDomainName} ${varDomainName}
      */
-    void update${className}(${className} ${varDomainName});
+    void update(${className} ${varDomainName});
 
     /**
      * 删除
      *
-     * @param ${varDomainName} ${varDomainName}
+     * @param ids
      */
-    void delete${className}(${className} ${varDomainName});
+    void delete(String[] ids);
 }
