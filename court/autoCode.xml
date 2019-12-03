@@ -85,6 +85,12 @@
                   templateFile="templates/vo.java.gsp" engine="groovy">
             <acceptDataModel>tableModel</acceptDataModel>
         </template>
+        <template id="column" name="column 枚举"
+                  destFile="/${config.artifactId}-common/src/main/java/${PubUtils.packageToPath(config.basePackage)}/common/enums/columns/${tableDefine.id}Column.java"
+                  templateFile="templates/column.gsp" engine="groovy">
+            <acceptDataModel>tableModel</acceptDataModel>
+
+        </template>
 
     </templates>
 

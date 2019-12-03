@@ -10,7 +10,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -24,6 +26,8 @@ import java.util.Date;
  * @date ${config.nowDate}
  */
 @TableName("${tableDefine.dbTableName}")
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class ${tableDefine.id} implements Serializable{
 

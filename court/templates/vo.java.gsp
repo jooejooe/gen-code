@@ -6,7 +6,9 @@
 %>package ${config.basePackage}${PubUtils.addStrAfterSeparator(config.category,"." )}.vo;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -24,6 +26,8 @@ import io.swagger.annotations.ApiModelProperty;
  * @date ${config.nowDate}
  */
 @ApiModel(value = "${tableDefine.cnname}")
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class ${tableDefine.id}QueryVO implements Serializable{
 
